@@ -1,0 +1,64 @@
+BÀI TẬP
+
+Cho đồ thị vô hướng với N đỉnh và M cạnh. Trong bài toán này, các đỉnh và các cạnh được đánh số từ 1.
+
+Người ta thực hiện một tập các thao tác xóa cạnh. Sau mỗi cạnh bị xóa, người ta muốn kiểm tra xem thành phần liên thông chứa một đỉnh nào đó còn lại bao nhiêu đỉnh.
+
+Chú ý: các thao tác xóa thực hiện lần lượt trên đồ thị ban đầu. Sau mỗi cạnh bị xóa thì đồ thị không được khôi phục như ban đầu được nữa. Trong trường hợp thao tác xóa bị trùng lặp, tức là cạnh này đã bị xóa trước đó, thì đồ thị không bị thay đổi gì.
+
+Input
+
+Dòng đầu ghi 3 số N, M , Q. Trong đó N là số đỉnh, M là số cạnh và Q là số truy vấn.
+
+Tiếp theo là M dòng ghi lần lượt các cạnh của đồ thị.
+
+Tiếp theo là Q dòng, mỗi dòng ghi 2 số e và u. Trong đó e là thứ tự cạnh bị xóa, u là đỉnh cần kiểm tra.
+
+Output
+
+Với mỗi truy vấn, hãy in ra số đỉnh của thành phần liên thông chứa đỉnh u.
+
+Giới hạn:
+
+Subtask 1 (50%): 1 ≤ N, M, Q ≤ 3000
+
+Subtask 2 (50%): 1 ≤ N ≤ 105 ; 1 ≤ M, Q ≤ 2*105
+
+Ví dụ
+
+Input
+
+4 4 3
+
+1 2
+
+1 4
+
+2 3
+
+3 4
+
+2 1
+
+3 3
+
+1 1
+
+Output
+
+4
+
+2
+
+1
+
+ 
+
+Giải thích test ví dụ:
+
+Xóa cạnh thứ 2 (là cạnh 1 – 4) thì đồ thị vẫn liên thông.
+Xóa cạnh thứ 3 (là cạnh (2 – 3), đỉnh 3 thuộc cùng thành phần liên thông với đỉnh 4
+Xóa cạnh thứ 1 (là cạnh 1 – 2), đỉnh 1 là đỉnh cô lập.
+Giới hạn thời gian: 8s
+
+Giới hạn bộ nhớ: 200000 Kb

@@ -1,0 +1,83 @@
+Cho tập hợp A gồm N phần tử. Nhiệm vụ của bạn là hãy in ra các tập con thỏa mãn tổng giá trị các phần tử  ≤ số K cho trước.
+
+Input:
+
+Dòng đầu tiên là số nguyên N và K (2 ≤ N ≤ 9, K ≤ 100).
+
+Dòng tiếp theo gồm N số nguyên A[i] (1 ≤ A[i] ≤ 100).
+
+Output: 
+
+Với mỗi tập con thỏa mãn, in ra trên dòng thứ nhất là các vị trí các phần tử được lựa chọn, dòng thứ hai là tổng của các phần tử dưới dạng “Sum = X”. Lưu ý có dấu cách trước và sau dấu bằng.
+
+Độ ưu tiên: tập con có tổng giá trị các phần tử nhỏ hơn được in ra trước.
+
+Nếu 2 tập con có tổng bằng nhau, in ra tập con có thứ tự từ điển nhỏ hơn.
+
+Nếu không có tập con nào thỏa mãn, in ra -1.
+
+Ví dụ:
+
+Input
+
+Output
+
+3 10
+
+3 5 4
+
+1
+
+Sum = 3
+
+3
+
+Sum = 4
+
+2
+
+Sum = 5
+
+1 3
+
+Sum = 7
+
+1 2
+
+Sum = 8
+
+2 3
+
+Sum = 9
+
+4 1
+
+2 3 4 5
+
+-1
+
+3 4
+
+2 2 4
+
+1
+
+Sum = 2
+
+2
+
+Sum = 2
+
+1 2
+
+Sum = 4
+
+3
+
+Sum = 4
+
+ 
+
+Giới hạn thời gian: 1s
+
+Giới hạn bộ nhớ: 200000 Kb

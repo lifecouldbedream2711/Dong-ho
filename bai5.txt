@@ -1,0 +1,68 @@
+BÀI TẬP
+
+Tại đất nước Highland có N thành phố, mỗi cặp thành phố được kết nối với nhau bởi một tuyến đường một chiều duy nhất. Chi phí di chuyển giữa thành phố thứ u tới thành phố v là C[u][v].
+
+Bạn cần tìm một hành trình thỏa mãn các yêu cầu:
+
+Có thể xuất phát ở bất cứ đâu, nhưng kết thúc hành trình phải quay lại điểm xuất phát.
+Phải đi qua ít nhất 2 tuyến đường.
+Chi phí trung bình trên mỗi tuyến đường là nhỏ nhất (Lấy tổng chi phí / số tuyến đường đi qua).
+Input:
+
+Dòng đầu tiên là số lượng thành phố N (2 ≤ N ≤ 500).
+
+N dòng tiếp theo, mỗi dòng gồm N số nguyên cho biết chi phí di chuyển từ thành phố u tới v. C[u][u] = 0 và 1 ≤ C[u][v] ≤ 200.
+
+Output: 
+
+In ra chi phí trung bình trên mỗi tuyến đường nhỏ nhất tìm được, dưới dạng phân số A/B, trong đó ước chung lớn nhất của A và B bằng 1.
+
+ 
+
+Ví dụ:
+
+Test 1
+
+Test 2
+
+Input:
+
+2
+
+0 1
+
+2 0
+
+ 
+
+ 
+
+Output:
+
+3/2
+
+ 
+
+Input:
+
+3
+
+0 2 6
+
+4 0 2
+
+1 9 0
+
+ 
+
+Output:
+
+5/3
+
+ 
+
+ 
+
+Giới hạn thời gian: 1s
+
+Giới hạn bộ nhớ: 200000 Kb

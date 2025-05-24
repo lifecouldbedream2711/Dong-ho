@@ -1,0 +1,47 @@
+BÀI TẬP
+
+Cho dãy số nguyên A[]. Với mỗi giá trị A[i], các bạn đã biết ngăn xếp có thể được sử dụng để tìm phần tử đầu tiên bên phải hoặc đầu tiên bên trái lớn hơn giá trị A[i].
+
+Bài toán hôm nay được mô tả như sau: hãy đếm xem có bao nhiêu cặp (i,j) với i<j thỏa mãn từ vị trí i đến vị trí j không có số nào lớn hơn A[i] hoặc A[j]. Tất nhiên các cặp (i,i+1) luôn thỏa mãn.
+
+Input
+
+Dòng đầu ghi số N là số phần tử của A[] (1 < N < 500.000).
+
+Tiếp theo là N dòng, mỗi dòng ghi 1 số nguyên dương là các phần tử của dãy A, các số đều không quá 9 chữ số.
+
+Output
+
+Ghi ra số cặp (i,j) đếm được.
+
+Ví dụ
+
+Input
+
+Output
+
+7
+
+2
+
+4
+
+1
+
+2
+
+2
+
+5
+
+1
+
+10
+
+ 
+
+Giải thích test ví dụ: Các cặp thỏa mãn (với chỉ số tính từ 1) là: (1,2); (2,3); (2,4); (2,5); (2,6); (3,4); (4,5); (4,6); (5,6); (6,7).
+
+Giới hạn thời gian: 2s
+
+Giới hạn bộ nhớ: 200000 Kb
