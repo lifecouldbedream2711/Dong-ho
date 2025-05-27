@@ -53,7 +53,7 @@
      score_max db 10                                                  ;diem toi da
      old_key db 'g'                                                   ;huong cu cua con ran
      border_row db 40 dup("#"), "$"                                   ;hang rao nam ngang
-
+     dau_ran db 2D
 .code
 
 ;sinh ngau nhien 1 so c trong khoang tu a toi b (la so chan)
@@ -282,6 +282,7 @@ choi proc
     
         ;cac huong di chuyen cua con ran    
 len_tren:
+    mov dau_ran,30
     cmp bl, 's'                     ;neu huong cu la di xuong (nguoc huong hien tai) thi chuong trinh khong chap nhan
     je game_loop                    ;quay lai nhap ki tu khac
     mov old_key, 'w'                ;neu hop le -> huong hien tai tro thanh huong cu moi 
@@ -289,6 +290,7 @@ len_tren:
     jmp check                       ;nhay den ham kiem tra
 
 xuong_duoi:
+    mov dau_ran,31
     cmp bl, 'w'                     ;neu huong cu la di xuong (nguoc huong hien tai) thi chuong trinh khong chap nhan
     je game_loop                    ;quay lai nhap ki tu khac
     mov old_key, 's'                ;neu hop le -> huong hien tai tro thanh huong cu moi
@@ -296,13 +298,15 @@ xuong_duoi:
     jmp check                       ;nhay den ham kiem tra
 
 sang_trai:
+    mov dau_ran,17
     cmp bl, 'd'                     ;neu huong cu la di xuong (nguoc huong hien tai) thi chuong trinh khong chap nhan
     je game_loop                    ;quay lai nhap ki tu khac
     mov old_key, 'a'                ;neu hop le -> huong hien tai tro thanh huong cu moi
     sub snake_y, 2                  ;tang toa_do_y con ran len 2 (vi con ran sang phai)
     jmp check                       ;nhay den ham kiem tra
 
-sang_phai:                          
+sang_phai:
+    mov dau_ran,16                          
     cmp bl, 'a'                     ;neu huong cu la di xuong (nguoc huong hien tai) thi chuong trinh khong chap nhan
     je game_loop                    ;quay lai nhap ki tu khac
     mov old_key, 'd'                ;neu hop le -> huong hien tai tro thanh huong cu moi
@@ -381,7 +385,7 @@ in_ran proc
     mov cl, len_snake                      ;luu chieu dai con ran vao thanh ghi cl
     cmp cx, 1                              ;kiem tra chieu dai = 1 thi chi in dau con ran
     jng ket                                ;thuc hien in dau con ran
-    gan_toa_do [di], [si], '.'             ;in duoi con ran
+    gan_toa_do [di], [si], '@'             ;in duoi con ran
     
     inc di                                 ;tang chi so di (de in phan than con ran)
     inc si                                 ;tang chi so si (de in phan than con ran)
@@ -389,13 +393,13 @@ in_ran proc
         dec cx                             ;giam so than ran can in (vi da in cai duoi)
         cmp cx, 1                          ;kiem tra in het than con ran chua
         jng ket                            ;in het than con ran thi ket thuc va in dau con ran
-        gan_toa_do [di], [si], 'x'         ;in than con ran
+        gan_toa_do [di], [si], '@'         ;in than con ran
         
         inc si                             ;tang chi so di
         inc di                             ;tang chi so si
         jmp lapin                          ;lap lai vong lap in than con ran
     ket:
-        gan_toa_do [di], [si], 'X'         ;in dau con ran
+        gan_toa_do [di], [si], dau_ran         ;in dau con ran
     ret
 in_ran endp 
 
@@ -546,5 +550,3 @@ xoa_man_hinh proc
     int 10h           ; goi ham ngat 10h de thuc hien lenh xoa
     ret 
 xoa_man_hinh endp
-
-
